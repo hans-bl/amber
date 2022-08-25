@@ -1,0 +1,12 @@
+<h1>Cycle#edit</h1>
+<p>Find me in app/views/cycle/edit.html.erb</p>
+
+<%= simple_form_for @cycle do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :color %>
+  <%= f.input :general_state %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>

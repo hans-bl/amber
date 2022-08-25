@@ -1,0 +1,22 @@
+<h1>Cycle#new</h1>
+<p>Find me in app/views/cycle/new.html.erb</p>
+
+<%= simple_form_for @cycle do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.association :brand %>
+  <%= f.association :model %>
+  <%= f.association :license %>
+  <%= f.input :color %>
+  <%= f.input :general_state %>
+  <%= f.input :location %>
+  <%= f.input :price %>
+  <%= f.input :nb_of_owners %>
+  <%= f.input :tires_state %>
+  <%= f.input :battery_soh %>
+  <%= f.input :maintenances %>
+  <%= f.input :kilometrage %>
+  <%= f.input :release_date %>
+  <%= f.input :user_combined_range %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

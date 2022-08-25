@@ -1,0 +1,23 @@
+<h1><%= @cycle.title %></h1>
+<p><%= @cycle.description %></p>
+
+<ul>
+  <li><%= @cycle.brand.title %></li>
+  <li><%= @cycle.model.title %></li>
+  <li><%= @cycle.license.title %></li>
+  <li><%= @cycle.color %></li>
+  <li><%= @cycle.general_state %></li>
+  <li><%= @cycle.location %></li>
+  <li><%= @cycle.price %></li>
+  <li>Publié par : <%= @cycle.user.first_name %></li>
+</ul>
+
+<p><%= link_to "< Back", cycles_path, class: "btn btn-secondary py-2" %></p>
+<p>
+  <%= link_to "Destroy",
+  cycle_path(@cycle),
+  data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+    } %>
+</p>

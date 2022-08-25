@@ -59,7 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_24_180966) do
     t.integer "caster_angle"
     t.integer "weight"
     t.integer "kilometrage"
-    t.integer "tires_state"
+    t.string "tires_state"
     t.integer "battery_soh"
     t.integer "nb_of_owners"
     t.string "motor_technology"
