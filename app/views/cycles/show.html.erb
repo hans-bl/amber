@@ -2,9 +2,9 @@
 <p><%= @cycle.description %></p>
 
 <ul>
-  <li><%= @cycle.brand.title %></li>
-  <li><%= @cycle.model.title %></li>
-  <li><%= @cycle.license.title %></li>
+  <li><%= link_to @cycle.brand.title, brand_path(@cycle.brand) %></li>
+  <li><%= link_to @cycle.model.title, model_path(@cycle.model) %></li>
+  <li><%= link_to @cycle.license.title, license_path(@cycle.license) %></li>
   <li><%= @cycle.color %></li>
   <li><%= @cycle.general_state %></li>
   <li><%= @cycle.location %></li>
@@ -13,11 +13,9 @@
 </ul>
 
 <p><%= link_to "< Back", cycles_path, class: "btn btn-secondary py-2" %></p>
-<p>
-  <%= link_to "Destroy",
-  cycle_path(@cycle),
-  data: {
-    turbo_method: :delete,
-    turbo_confirm: "Are you sure?"
-    } %>
-</p>
+<p><%= link_to "Edit", edit_cycle_path, class: "btn btn-info py-2" %></p>
+<%# Destroy works but turbo_confirm doesnt %>
+<p><%= button_to "Destroy", cycle_path(@cycle), method: :delete, data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></p>

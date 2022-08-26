@@ -1,0 +1,9 @@
+<h1>License#new</h1>
+<p>Admin view</p>
+
+<%= simple_form_for @license do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.input :category %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

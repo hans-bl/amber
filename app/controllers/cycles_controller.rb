@@ -27,14 +27,17 @@ class CyclesController < ApplicationController
 
   def update
     @cycle = Cycle.find(params[:id])
-    @cycle.update(cycle_params)
-    redirect_to cycle_path(@cycle)
+    if @cycle.update(cycle_params)
+      redirect_to cycle_path(@cycle)
+    else
+      render :edit
+    end
   end
 
   def destroy
     @cycle = Cycle.find(params[:id])
-    @cycle.destroy
-    redirect_to root_path, status: :see_other
+    @cycle.delete
+    redirect_to cycles_path, status: :see_other
   end
 
   private

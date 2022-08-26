@@ -1,3 +1,3 @@
 class License < ApplicationRecord
-  has_many :cycle
+  has_many :cycles
 end

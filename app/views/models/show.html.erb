@@ -1,0 +1,18 @@
+<h1><%= @model.title %></h1>
+<p><%= @model.description %></p>
+
+<ul>
+  <% @model.cycles.each do |cycle| %>
+    <li>
+      <%= link_to cycle.title, cycle_path(cycle) %> : <%= cycle.description %> - <%= cycle.color %> - <%= cycle.general_state %> - <%= cycle.location %> - <%= cycle.price %></p>
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "< Back", cycles_path, class: "btn btn-secondary py-2" %></p>
+<p><%= link_to "Edit", edit_model_path, class: "btn btn-info py-2" %></p>
+<%# Destroy works but turbo_confirm doesnt %>
+<p><%= button_to "Destroy", model_path(@model), method: :delete, data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></p>

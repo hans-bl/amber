@@ -1,0 +1,8 @@
+<h1>Brand#new</h1>
+<p>Admin view</p>
+
+<%= simple_form_for @brand do |f| %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

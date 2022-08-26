@@ -1,0 +1,19 @@
+<h1>Permis <%= @license.title %></h1>
+<p><%= @license.description %></p>
+<p>Category: <%= @license.category %></p>
+
+<ul>
+  <% @license.cycles.each do |cycle| %>
+    <li>
+      <%= link_to cycle.title, cycle_path(cycle) %> : <%= cycle.description %> - <%= cycle.color %> - <%= cycle.general_state %> - <%= cycle.location %> - <%= cycle.price %></p>
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "< Back", cycles_path, class: "btn btn-secondary py-2" %></p>
+<p><%= link_to "Edit", edit_license_path, class: "btn btn-info py-2" %></p>
+<%# Destroy works but turbo_confirm doesnt %>
+<p><%= button_to "Destroy", license_path(@license), method: :delete, data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></p>

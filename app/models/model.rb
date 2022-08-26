@@ -1,3 +1,3 @@
 class Model < ApplicationRecord
-  has_many :cycle
+  has_many :cycles
 end
