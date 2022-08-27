@@ -6,6 +6,14 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+# Destroy pre-existing seeds
+puts "Destroying pre-existing seeds…"
+User.destroy_all
+License.destroy_all
+Brand.destroy_all
+Model.destroy_all
+Cycle.destroy_all
+
 # User seed
 puts "Start seeding Users…"
 User.create!(
